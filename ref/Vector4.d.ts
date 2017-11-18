@@ -1,0 +1,44 @@
+/// <reference path="../src/gl-matrix.d.ts" />
+import VectorBase from "./VectorBase";
+import { GLM } from "gl-matrix";
+declare class Vector4 extends VectorBase {
+    static readonly XUnit: Vector4;
+    static readonly YUnit: Vector4;
+    static readonly ZUnit: Vector4;
+    static readonly WUnit: Vector4;
+    static readonly One: Vector4;
+    static readonly Zero: Vector4;
+    static copy(vec: Vector4): Vector4;
+    static dot(v1: Vector4, v2: Vector4): number;
+    static add(v1: Vector4, v2: Vector4): Vector4;
+    static subtract(v1: Vector4, v2: Vector4): Vector4;
+    static multiply(s: number, v: Vector4): Vector4;
+    static negate(v1: Vector4): Vector4;
+    static equals(v1: Vector4, v2: Vector4): boolean;
+    static nearlyEquals(v1: Vector4, v2: Vector4): boolean;
+    static normalize(v1: Vector4): Vector4;
+    static min(v1: Vector4, v2: Vector4): Vector4;
+    static max(v1: Vector4, v2: Vector4): Vector4;
+    static angle(v1: Vector4, v2: Vector4): number;
+    static parse(str: string): Vector4;
+    static lerp(v1: Vector4, v2: Vector4, t: number): Vector4;
+    constructor(x: GLM.IArray);
+    constructor(x: number, y: number, z: number, w: number);
+    readonly normalized: Vector4;
+    X: number;
+    Y: number;
+    Z: number;
+    W: number;
+    normalizeThis(): Vector4;
+    dotWith(v: Vector4): number;
+    addWith(v: Vector4): Vector4;
+    subtractWith(v: Vector4): Vector4;
+    multiplyWith(s: number): Vector4;
+    negateThis(): Vector4;
+    equalWith(v: Vector4): boolean;
+    nearlyEqualWith(v: Vector4): boolean;
+    readonly ElementCount: number;
+    toString(): string;
+    toDisplayString(): string;
+}
+export default Vector4;

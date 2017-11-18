@@ -1,0 +1,44 @@
+/// <reference path="../src/gl-matrix.d.ts" />
+import VectorBase from "./VectorBase";
+import { GLM } from "gl-matrix";
+declare class Vector3 extends VectorBase {
+    static readonly XUnit: Vector3;
+    static readonly YUnit: Vector3;
+    static readonly ZUnit: Vector3;
+    static readonly Zero: Vector3;
+    static readonly One: Vector3;
+    static copy(source: Vector3): Vector3;
+    static dot(v1: Vector3, v2: Vector3): number;
+    static add(v1: Vector3, v2: Vector3): Vector3;
+    static subtract(v1: Vector3, v2: Vector3): Vector3;
+    static multiply(s: number, v: Vector3): Vector3;
+    static negate(v1: Vector3): Vector3;
+    static equals(v1: Vector3, v2: Vector3): boolean;
+    static nearlyEquals(v1: Vector3, v2: Vector3): boolean;
+    static normalize(v1: Vector3): Vector3;
+    static cross(v1: Vector3, v2: Vector3): Vector3;
+    static min(v1: Vector3, v2: Vector3): Vector3;
+    static max(v1: Vector3, v2: Vector3): Vector3;
+    static angle(v1: Vector3, v2: Vector3): number;
+    static parse(str: string): Vector3;
+    static lerp(v1: Vector3, v2: Vector3, t: number): Vector3;
+    constructor(x: number, y: number, z: number);
+    constructor(x: GLM.IArray);
+    readonly normalized: Vector3;
+    X: number;
+    Y: number;
+    Z: number;
+    normalizeThis(): Vector3;
+    dotWith(v: Vector3): number;
+    addWith(v: Vector3): Vector3;
+    subtractWith(v: Vector3): Vector3;
+    multiplyWith(s: number): Vector3;
+    negateThis(): Vector3;
+    equalWith(v: Vector3): boolean;
+    nearlyEqualWith(v: Vector3): boolean;
+    crossWith(v: Vector3): Vector3;
+    toString(): string;
+    toDisplayString(): string;
+    readonly ElementCount: number;
+}
+export default Vector3;

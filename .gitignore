@@ -110,8 +110,5 @@ lib
 lib-ts
 lib-es5
 test-es5
-ref
-register
 yarn.lock
-src/index.ts
 docs

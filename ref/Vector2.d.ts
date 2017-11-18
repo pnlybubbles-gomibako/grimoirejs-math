@@ -1,0 +1,40 @@
+/// <reference path="../src/gl-matrix.d.ts" />
+import VectorBase from "./VectorBase";
+import { GLM } from "gl-matrix";
+declare class Vector2 extends VectorBase {
+    static readonly XUnit: Vector2;
+    static readonly YUnit: Vector2;
+    static readonly One: Vector2;
+    static readonly Zero: Vector2;
+    static copy(vec: Vector2): Vector2;
+    static parse(str: string): Vector2;
+    static dot(v1: Vector2, v2: Vector2): number;
+    static add(v1: Vector2, v2: Vector2): Vector2;
+    static subtract(v1: Vector2, v2: Vector2): Vector2;
+    static multiply(s: number, v: Vector2): Vector2;
+    static negate(v1: Vector2): Vector2;
+    static equals(v1: Vector2, v2: Vector2): boolean;
+    static nearlyEquals(v1: Vector2, v2: Vector2): boolean;
+    static normalize(v1: Vector2): Vector2;
+    static min(v1: Vector2, v2: Vector2): Vector2;
+    static max(v1: Vector2, v2: Vector2): Vector2;
+    static angle(v1: Vector2, v2: Vector2): number;
+    static lerp(v1: Vector2, v2: Vector2, t: number): Vector2;
+    constructor(x: number, y: number);
+    constructor(x: GLM.IArray);
+    readonly normalized: Vector2;
+    X: number;
+    Y: number;
+    dotWith(v: Vector2): number;
+    addWith(v: Vector2): Vector2;
+    subtractWith(v: Vector2): Vector2;
+    multiplyWith(s: number): Vector2;
+    negateThis(): Vector2;
+    equalWith(v: Vector2): boolean;
+    nearlyEqualWith(v: Vector2): boolean;
+    normalizeThis(): Vector2;
+    toString(): string;
+    toDisplayString(): string;
+    readonly ElementCount: number;
+}
+export default Vector2;
