@@ -150,7 +150,7 @@ class Quaternion {
    */
   public static fromToRotation(from: Vector3, to: Vector3,axisHint:Vector3 = null): Quaternion {
     let crossed = Vector3.cross(from.normalized, to.normalized);
-    if(crossed.magnitude < 0.5){ // If crossed vector magnitude is less than 1, that is from.to is 1 or -1
+    if(crossed.magnitude < 1e-4){ // If crossed vector magnitude is less than 1, that is from.to is 1 or -1
       crossed = axisHint?axisHint:new Vector3(0,1,0);
     }
     const angle = Math.acos(Vector3.dot(from.normalized, to.normalized));
